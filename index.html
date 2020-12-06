@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.scss">
+    <link rel="stylesheet/less" type="text/css" href="style.less" />
+<script src="//cdn.jsdelivr.net/npm/less" ></script>
+    <title>KOPYKITAB</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="header.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="carosuel.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Top header -->
+        <div class="headerTop">
+          <div class="row">
+            <div class="col-6 d-flex justify-content-left">
+              <div class="dropdown">
+                <a href="" class="dropbtn" style="vertical-align: middle;
+                margin-top: 10px;"><i class='fas fa-server'></i> My library</a>
+              </div>
+            </div>
+                   <div class="col-6">
+                     <div class="rightcontainer">
+                    <div class="dropdown">
+                      <a href="" class="dropbtn"><i class='fas fa-download'></i> Download eBook Reader</a>
+                    </div>
+                    <div class="dropdown">
+                      <a href="" class="dropbtn">My Account</a>
+                      <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                  </div>
+                    <div class="dropdown">
+                      <a href="" class="dropbtn"><i class="fa fa-phone" ></i></a>
+                    </div>
+                    <div class="dropdown">
+                      <a href="" class="dropbtn"><i style="font-size:24px" class="fa">&#xf07a;</i></a>
+                    </div>
+                   </div>
+                  </div>
+                  </div>
+            </div>
+           
+          <!--  Center header -->
+        <div class="headerCenter">
+          
+            <div class="row">
+                <div class="col-6">
+                        <img src="data:image/webp;base64,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" alt="">
+                </div>
+                   <div class="col-6">
+                        <!-- Search bar with a button -->
+                        <div class="searchcontainer">
+                        
+                          <input type="text" class="form-control" placeholder="Search">
+                      
+                              <button class="btn btn-secondary" type="button"style="background-color:orange;">
+                                  <i class="fa fa-search" style="background-color:orange;"></i>
+                              </button>
+                          
+                        </div>
+                      </div>       
+                   </div>
+       </div>
+       
+        
+          
+        
+        <!-- Bottom header -->
+        <div class="headerBottom">
+          <div class="row d-flex justify-content-center">
+          <div class="dropdown">
+            <button class="dropbtn">Higher Education</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Professional Courses</button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Competitive Exams</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+    </div> <div class="dropdown">
+      <button class="dropbtn">School</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Study Packages</button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">General</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Free eBooks</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Mock Test Series</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Videos</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Blog</button>
+</div>
+</div>
+        </div>
+</header>
+<div class="row">
+ 
+      <div class="breadcrumbcontainer">
+        <div class="col-xs-12 breadcrumb d-flex justify-content-center">
+        <a href="https://www.kopykitab.com/">Home</a>
+        <a href="https://www.kopykitab.com/Competitive-Exams">Competitive Exams</a>
+        <a href="https://www.kopykitab.com/NEET">NEET/AIPMT</a>
+        <a href="https://www.kopykitab.com/NEET-Physics">NEET Physics</a>
+        Kota Question Bank Physics For NEET
+        </div>
+      </div>
+    
+  </div>
+    <div class="centertopcontainer">
+    <div class="row d-flex justify-content-center" style="background: #fff;border-radius: 6px;padding: 16px; margin-bottom: 20px;">
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+      <div class="product_image_box">
+      <div class="product_image">
+      <div class="product_image_slider">
+      <ul>
+      <li>
+      <a title="Kota Question Bank Physics For NEET Sample PDF Download" href="#snapshot" class="snapshot_enlarge">
+      <img src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb002-300x380.jpg" title="Kota Question Bank Physics For NEET" alt="Kota Question Bank Physics For NEET" class="product_slides" data-pagespeed-url-hash="863431807" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+      </a>
+      </li>
+      </ul>
+      </div>
+      </div>
+      <div class="price_text_off"></div>
+      <div class="kk_trysample_box">
+      <a href="#snapshot" id="enlarge" class="preview_button_new snapshot_enlarge" data-name="" style="text-align: center; display: block;">View Snapshot</a>
+      </div>
+      </div>
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+      <div class="product-details">
+      <h1 class="product_name"><span>Kota Question Bank Physics For NEET</span></h1>
+      <div class="row">
+      <div class="col-md-12" style="margin: 0px 0px 20px 0px;">
+      <div class="author_name_new" style="border-left: 0px; padding-left: 0px;">
+      By <span class="author_name_text">Girish Gaur</span>
+      <span class="goto_author" style="cursor: pointer;">more</span>
+      </div>
+      <div class="info">
+      <span class="info_views"><span class="info_view_icon"></span>4668 Views</span>
+      </div>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="price" id="main_price_holder">
+      <div class="price_new"><span class="mob_priceText">Selling Price</span> : <span id="rentalvalue" class="selling_price">₹435.00</span></div>
+      <div class="price_old"><span class="mob_priceText">MRP</span> : <span id="mrp_main" class="mrp_number">₹580.00</span></div>
+      <div class="productCombo_savetext"><span class="mob_priceText">You will save</span> : ₹145.00 after 25% Discount</div>
+      </div>
+      </div>
+      </div>
+      <hr style="margin-top: 10px;">
+      <div class="product_purchase_tabs">
+      <div class="product_purchase_tabs_content">
+      <!---rental book starts-->
+      <!--- rental book ends--->
+      <!--- buy book starts-->
+      <div class="row" id="main_button">
+      <div class="productbuy_buttons">
+      <div class="col-md-6 col-sm-6 col-xs-6">
+      <span class="button"><input type="button" value="Add to cart" id="button-cart" data-redirect="0" class="button button-buy button-cart"></span>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6">
+      <span class="button_buy"><input type="button" value="Buy this Ebook" id="button-buy" data-redirect="1" class="button button-buy button-buy1"></span>
+      </div>
+      <div class="loginpopup_overlay">
+      <div class="loginpopup_new">
+      <div style="text-align: center;font-size: 14px;padding: 0px 10px 22px 10px;font-weight: 600;">Enter your email id to read this ebook</div>
+      <input type="email" name="email" id="email" value="" placeholder="Enter email id" size="30" class="form_input">
+      <a href="javascript:void(0)" class="trysubmit_button">Submit</a>
+      </div>
+      </div>
+      <style>.loginpopup_overlay{background-color:rgba(0,0,0,.7);position:fixed;top:0;left:0;height:100%;width:100%;z-index:10000;opacity:1;-webkit-transition:opacity 400ms ease-in;transition:opacity 400ms ease-in;display:none}.loginpopup_new{background:#fff;max-width:360px;width:26%;margin:150px auto;text-align:left;overflow:hidden;border-radius:2px;transition:.6s;padding:20px 14px}.error_field1{border:1px solid red!important}#email{width:100%;padding:14px 10px 14px 10px;font-size:13px;border-radius:2px;border:solid 1px #b9b9b9;margin-bottom:14px;color:#383838;outline:0}.trysubmit_button{background:#ff8f00;padding:14px;display:block;text-align:center;border-radius:4px;color:#fff!important;font-size:14px}</style>
+      </div>
+      </div>
+      <div class="prod_info">
+      <input type="hidden" name="product_id" value="47574">
+      <input type="hidden" name="promo_code" value="">
+      </div>
+      <!--buy book ends-->
+      <!--- Buy chapter wise--->
+      <!-- Buy chapter wise ends--->
+      <!--- Print enabled--->
+      <!--- Add to wishlist button --->
+      <div class="share_wishlist">
+      <span class="info_wishlist">
+      <a href="javascript:void(0)" title="Add To Wishlist" class="addToWishlist">
+      <div class="product-addwishtlist-large"></div>
+      Add to Wish List
+      </a>
+      </span>
+      <span style="position: relative">
+      <a href="javascript:void(0)" class="shareClick"><div class="productshare"></div>Share</a>
+      <div class="web_shareProduct_holder">
+      <div class="uparrow"></div>
+      <a href="https://web.whatsapp.com//send?text=https://www.kopykitab.com/Kota-Question-Bank-Physics-For-NEET-by-Girish-Gaur" target="_blank" title="Share on whatsapp" onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><div class="productshare-w"></div></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=www.kopykitab.com/Kota-Question-Bank-Physics-For-NEET-by-Girish-Gaur&amp;t=Kota Question Bank Physics For NEET" target="_blank" title="Share on Facebook" onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><div class="productshare-f"></div></a>
+      <a href="javascript:void(0)" onclick="copy_link()"><div class="productshare-c"></div></a>
+      </div>
+      </span>
+      </div>
+      <div class="video_popup_holder">
+      <div id="video_view" class="videoView">
+      </div>
+      </div>
+      <div class="offer_box">
+      <p class="header_text" style="padding: 10px;border-bottom: 1px solid #FFF3AA;text-transform: uppercase;font-weight: 600;"><span class="product-discount" style="margin-right: 8px;"></span> Save extra with 2 Offers </p>
+      <div style="color: #737373;padding: 10px;font-size: 13px;border-bottom: 1px solid #FFF3AA;"><p style="color:#ff8f00;margin: 0px;font-weight: 500;font-size: 14px;">Get ₹ 50</p>Instant Cashback on the purchase of ₹ 400 or above</div>
+      <div style="color: #737373;padding: 10px;font-size: 13px;border-top: 1px solid #FFF3AA;"><p style="color:#ff8f00;margin: 0px;font-size: 14px;font-weight: 500;">NEW35</p> Get Flat 35% Off on your First Order</div>
+      </div>
+      </div>
+      <div class="product_purchase_table_content">
+      <p class="header_text1">Product Specifications</p>
+      <table class="product_specification">
+      <tbody><tr>
+      <td>Publisher</td>
+      <td>
+      <a href="https://www.kopykitab.com/G-R-Bathla-Publications" target="_blank">G R Bathla Publications</a>
+      <a style="color: #787878;border-radius: 50px;border: 1px solid #d4d4d4;padding: 2px 16px;display: inline-block;font-size: 12px;" target="_blank" href="https://www.kopykitab.com/NEET-Physics/G-R-Bathla-Publications">All NEET Physics books by G R Bathla Publications</a>
+      </td>
+      </tr>
+      <tr>
+      <td>ISBN</td>
+      <td>9788194414223</td>
+      </tr>
+      <tr>
+      <td>Author:</td>
+      <td><a href="https://www.kopykitab.com/index.php?route=product/search&amp;q=Girish+Gaur" target="_blank">Girish Gaur</a></td>
+      </tr>
+      <tr>
+      <td>Number of Pages</td>
+      <td>689</td>
+      </tr>
+      <tr>
+      <td>Available</td>
+      <td><div class="availableon"></div> Available in all digital devices</td>
+      </tr>
+      </tbody></table>
+      </div>
+      <div class="kk_frequentlyBrought" id="web_frequentlyBrought_products"><div class="web_frequentlyBrought"><p class="header_text1" style="margin: 10px 0 18px 0;font-size:15px">Frequently Bought Together</p><div class="web_frequentlyBrought_content"><div class="web_frequentlyBrought_product current_book active_book"><div class="web_frequentlyBrought_image"><img src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb002-110x170.jpg" alt="Kota Question Bank Physics For NEET"></div><input type="checkbox" name="product_id[]" data-price="₹435.00" data-mrp="₹580.00" value="47574" class="combo_special" readonly=""><div class="web_frequentlyBrought_name">Kota Question Bank Physics For NEET</div><div class="web_frequentlyBrought_price"><span class="web_frequentlyBrought_pricenew">₹435.00</span><span class="web_frequentlyBrought_priceold">₹580.00</span></div><div class="web_frequentlyBrought_text">Selected</div></div><div class="web_frequentlyBrought_product"><div class="web_frequentlyBrought_image"><img src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb015-155x235.jpg" alt="Kota Question Bank Mathematics For IIT-JEE"></div><input type="checkbox" name="product_id[]" value="48403" data-price="₹465.00" data-mrp="₹620.00" id="frequent-product-48403" class="combo_special"><label class="frequentlyLabel" for="frequent-product-48403"></label><div class="web_frequentlyBrought_name">Kota Question Bank Mathematics For IIT-JEE</div><div class="web_frequentlyBrought_price"><span class="web_frequentlyBrought_pricenew">₹465.00</span><span class="web_frequentlyBrought_priceold">₹620.00</span></div><div class="web_frequentlyBrought_text"></div></div><div class="web_frequentlyBrought_product"><div class="web_frequentlyBrought_image"><img src="https://static.kopykitab.com/image/cache/data/mbd-group-publishers/mbd0347-155x235.jpg" alt="Moderns ABC Of Objective Physics JEE Main Part-1 &amp; 2"></div><input type="checkbox" name="product_id[]" value="12388" data-price="₹443.75" data-mrp="₹865.00" id="frequent-product-12388" class="combo_special"><label class="frequentlyLabel" for="frequent-product-12388"></label><div class="web_frequentlyBrought_name">Moderns ABC Of Objective Physics JEE Main Part-1 &amp; 2</div><div class="web_frequentlyBrought_price"><span class="web_frequentlyBrought_pricenew">₹443.75</span><span class="web_frequentlyBrought_priceold">₹865.00</span></div><div class="web_frequentlyBrought_text"></div></div></div><div class="web_frequentlyBrought_info"><div style="font-size: 14px;width: 26%;">Selected items : <span style="font-weight:600;font-size:15px" id="selected_Count">1</span></div><div class="web_frequentlyBroughtPrice" style="width: 35%;"><span class="frequentlyBrought_price">Offer Price : <b id="group_price">₹435.00</b></span> <span class="frequentlyBrought_save">You Save : <b id="group_mrp">₹580.00</b></span></div><div style="width: 37%;"><a href="javascript:void(0)" id="multiple_buy" class="web_frequentlyBrought_buy">Buy This product</a></div></div></div></div>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+    
+          <div class="relatedsearch">
+            <div class="container">
+              <div class="row">
+                <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                        <div class="MultiCarousel-inner">
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb015-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb015-120x200.jpg" alt="Kota Question Bank Mathematics For IIT-JEE" title="Kota Question Bank Mathematics For IIT-JEE" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb001-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb001-120x200.jpg" alt="Kota Question Bank Biology For NEET" title="Kota Question Bank Biology For NEET" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb009-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb009-120x200.jpg" alt="Kota Question Bank Physical Chemistry Part-I For IIT-JEE" title="Kota Question Bank Physical Chemistry Part-I For IIT-JEE" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="pad15">
+                                    <p class="lead"></p>
+                                    <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                    <p>₹ 620</p>
+                                    <p>₹ 465</p>
+                                    <button>Buy this EBook</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary leftLst"></button>
+                        <button class="btn btn-primary rightLst"></button>
+                    </div>
+             </div>
+          </div>
+        </div>
+        <div class="relatedsearch">
+          <div class="container">
+            <div class="row">
+              <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+                      <div class="MultiCarousel-inner">
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb015-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb015-120x200.jpg" alt="Kota Question Bank Mathematics For IIT-JEE" title="Kota Question Bank Mathematics For IIT-JEE" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb001-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb001-120x200.jpg" alt="Kota Question Bank Biology For NEET" title="Kota Question Bank Biology For NEET" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb009-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/bathla-publications/grb009-120x200.jpg" alt="Kota Question Bank Physical Chemistry Part-I For IIT-JEE" title="Kota Question Bank Physical Chemistry Part-I For IIT-JEE" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                          <div class="item">
+                              <div class="pad15">
+                                  <p class="lead"></p>
+                                  <img src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" data-src="https://static.kopykitab.com/image/cache/data/schand-publishing/schand1657-120x200.jpg" alt="Problems In Inorganic Chemistry" title="Problems In Inorganic Chemistry" class="book_img" data-pagespeed-url-hash="1469002671" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                  <p>₹ 620</p>
+                                  <p>₹ 465</p>
+                                  <button>Buy this EBook</button>
+                              </div>
+                          </div>
+                      </div>
+                      <button class="btn btn-primary leftLst"></button>
+                      <button class="btn btn-primary rightLst"></button>
+                  </div>
+           </div>
+        </div>
+      </div>
+      
+    <footer>
+      <div class="footer_top">
+        
+        <div class="row">
+        <ul class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <li><span class="footer_top_heading">School Books</span></li>
+        <li><a href="https://www.kopykitab.com/Oswaal-Books" title="Oswaal Books">Oswaal Books</a></li>
+        <li><a href="https://www.kopykitab.com/School-Education-eBooks/eBooks-for-Class-9th" title="Class 9th Books">Class 9th Books</a></li>
+        <li><a href="https://www.kopykitab.com/School-Education-eBooks/eBooks-for-Class-10th" title="Class 10th Books">Class 10th Books</a></li>
+        <li><a href="https://www.kopykitab.com/School-Education-eBooks/eBooks-for-Class-11th" title="Class 11th Books">Class 11th Books</a></li>
+        <li><a href="https://www.kopykitab.com/School-Education-eBooks/eBooks-for-Class-12th" title="Class 12th Books">Class 12th Books</a></li>
+        </ul>
+        <ul class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <li><span class="footer_top_heading">Engineering Books</span></li>
+        <li><a href="https://www.kopykitab.com/index.php?route=product/search&amp;q=rgpv" title="RGPV Books &amp; Notes">RGPV Books &amp; Notes</a></li>
+        <li><a href="https://www.kopykitab.com/index.php?route=product/search&amp;q=vtu" title="VTU Books &amp; Notes">VTU Books &amp; Notes</a></li>
+        <li><a href="https://www.kopykitab.com/engineering-ebooks-free-download" title="Free Engineering Books">Free Engineering Books</a></li>
+        <li><a href="https://www.kopykitab.com/engineering-eBooks/Information-Technology-eBooks" title="Information Technology Books">Information Technology Books</a></li>
+        <li><a href="https://www.kopykitab.com/engineering-eBooks/electrical-engineering-ebooks" title="Electrical Engineering Books">Electrical Engineering Books</a></li>
+        </ul>
+        <ul class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <li><span class="footer_top_heading">Competitive Exams</span></li>
+        <li><a href="https://www.kopykitab.com/eBooks-For-Bank-PO" title="Bank PO Exam">Bank PO Exam</a></li>
+        <li><a href="https://www.kopykitab.com/eBooks-For-GATE" title="Gate Books">Gate Books</a></li>
+        <li><a href="https://www.kopykitab.com/eBooks-for-teaching-exams" title="Teaching Exams Books">Teaching Exams Books</a></li>
+        <li><a href="https://www.kopykitab.com/Competitive-Exams-eBooks/eBooks-For-AIEEE-NIT-JEE-MAINS" title="AIEEE-NIT-JEE MAINS Books">AIEEE-NIT-JEE MAINS Books</a></li>
+        <li><a href="https://www.kopykitab.com/Competitive-Exams-eBooks/eBooks-For-UPSC" title="UPSC Books">UPSC Books</a></li>
+        </ul>
+        <ul class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <li><span class="footer_top_heading" title="">Professional Courses</span></li>
+        <li><a href="//icsi.kopykitab.com/content/" title="ICSI Books &amp; Study Materials">ICSI Books &amp; Study Materials</a></li>
+        <li><a href="https://www.kopykitab.com/Chartered-Accountant" title="Chartered Accountant Books">Chartered Accountant Books</a></li>
+        <li><a href="https://www.kopykitab.com/Company-Secretary" title="Company Secretary Books">Company Secretary Books</a></li>
+        <li><a href="//icsi.kopykitab.com/#free-trial" title="ICSI 7 days Trial">ICSI 7 days Trial</a></li>
+        <li><a href="https://www.kopykitab.com/Shuchita-Prakashan-solved-scanners-cs-ca-books-ebooks-publishers" title="Latest Scanners">Latest Scanners</a></li>
+        </ul>
+        </div>
+        <div class="row">
+        <ul class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <li><span class="footer_top_heading">School Boards</span></li>
+        <li><a href="https://www.kopykitab.com/Cbse" title="CBSE Books">CBSE Books</a></li>
+        <li><a href="https://www.kopykitab.com/Ncert" title="NCERT Books">NCERT Books</a></li>
+        <li><a href="https://www.kopykitab.com/Icse" title="ICSE Books">ICSE Books</a></li>
+        </ul>
+        <ul class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <li><span class="footer_top_heading">&nbsp;</span></li>
+        <li><a href="https://www.kopykitab.com/ISC" title="ISC Books">ISC Books</a></li>
+        <li><a href="https://www.kopykitab.com/Karnataka-Sslc" title="Karnataka SSLC">Karnataka SSLC</a></li>
+        <li><a href="https://www.kopykitab.com/Maharashtra-Hsc" title="Maharashtra HSC">Maharashtra HSC</a></li>
+        </ul>
+        <ul class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <li><span class="footer_top_heading">&nbsp;</span></li>
+        <li class="footer_heading hidden_space"></li>
+        <li><a href="https://www.kopykitab.com/Kerala-Sslc" title="Kerala SSLC">Kerala SSLC</a></li>
+        <li><a href="https://www.kopykitab.com/Karnataka-Puc" title="Karnataka PUC">Karnataka PUC</a></li>
+        <li><a href="https://www.kopykitab.com/Maharashtra-Ssc" title="Maharashtra SSC">Maharashtra SSC</a></li>
+        </ul>
+        <ul class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <li><span class="footer_top_heading">&nbsp;</span></li>
+        <li><a href="https://www.kopykitab.com/UP-Board" title="UP Board">UP Board</a></li>
+        <li><a href="https://www.kopykitab.com/TamilNadu-Sslc" title="TamilNadu SSLC">TamilNadu SSLC</a></li>
+        </ul>
+        </div>
+        
+        </div>
+        <div class="footerbottom">
+            
+              <div class="row d-flex justify-content-center">
+      
+                <div class="col-lg-3 col-md-6 footer-links">
+                  <h4>Information</h4>
+                  <ul>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">FAQ</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Terms & Conditions</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Payment Information</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-lg-3 col-md-6 footer-links">
+                  <h4>Links</h4>
+                  <ul>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">ICSI eLibrary</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Kopykitab eBook Reader</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Site Map</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-lg-3 col-md-6 footer-contact">
+                  <h4>My Account</h4>
+                  <ul>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Refer & Earn</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">My Account</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Order History</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">Wish List</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">My Library</a></li>
+                  </ul>
+      
+                </div>
+      
+                <div class="col-lg-3 col-md-6 footer-info">
+                  <h4>Connect With Us</h4>
+                  <div class="social-links mt-3">
+                    <a href="#" class="fa fa-facebook"></a>  
+                    <a href="#" class="fa fa-twitter"></a>   
+                    <a href="#" class="fa fa-linkedin"></a>  
+                    <a href="#" class="fa fa-instagram"></a>  
+                    <a href="#" class="fa fa-youtube"></a> 
+                  </div>
+                </div>
+      
+                
+              </div>
+           <div class="row d-flex justify-content-center">
+              <div class="sub-footer">
+                <span style="font-size:12px;line-height:30px;">Verified By &nbsp;</span>
+                 <i class="fa fa-cc-mastercard" style="font-size:36px"></i>
+                 <i class="fa fa-cc-visa" style="font-size:36px"></i>
+                 <i class="fa fa-cc-paypal" style="font-size:36px"></i>
+                <p>©&nbsp;2020 DigiBook Technologies (P) Ltd, All Rights Reserved.</p>
+                </div>
+              </div>
+          </div>
+    </footer>
+</body>
+</html>
